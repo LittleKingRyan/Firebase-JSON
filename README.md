@@ -2,6 +2,7 @@
 
 ### Case 1 (Suppose we already have data in our database)
 
+Create data reference
 ```javascript
 // selecting the 'users' child node in the database
 const usersRef = firebase.database().ref().child('users');
