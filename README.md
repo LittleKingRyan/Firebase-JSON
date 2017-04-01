@@ -49,18 +49,20 @@ user_01.once('value', snap => {
     user_01_value = snap.val();
 });
 
-var data_key = user_01_value.id; // get the id, which we use as the key to reference the user in firebase
+// get the id, which we use as the key to reference the user in firebase
+var data_key = user_01_value.id; 
 user_01_value.address = "New Address";
 var update = {}; // to update infomation, we need to create a empty JSON
-update[data_key] = user_01_value; // use data_key and the actually value to set the update JSON object
-
+// use data_key and the actually value to set the update JSON object
+update[data_key] = user_01_value; 
 // call the update() method with the update JSON object on usersRef to update its child nodes
 usersRef.update(update);
 
-// The problem here is that since Firebase works with AJAX, the callback function takes a while to actually get
-// the result from Firebase. Meanwhile, JavaScript keeps on running the sequential code. Since no actual value
-// has been assigned to user_01_value, user_01_value remains undefined. Thus, user_01_value.id will cause JavaScript
-// to throw an error.
+// The problem here is that since Firebase works with AJAX, 
+// the callback function takes a while to actually get
+// the result from Firebase. Meanwhile, JavaScript keeps on running the sequential code. 
+// Since no actual value has been assigned to user_01_value, user_01_value remains undefined. 
+// Thus, user_01_value.id will cause JavaScript to throw an error.
 
 // What we can do to update
 // update() takes the 'node' that we want to update, for example, 'users'
