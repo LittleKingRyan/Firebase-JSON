@@ -1,6 +1,6 @@
 # Firebase-JSON
 
-### Case 1 (Suppose we already have data in our database)
+### Suppose we already have data in our database
 
 Create data reference
 ```javascript
@@ -11,7 +11,7 @@ const usersRef = firebase.database().ref().child('users');
 const user_01 = userRef.child('01');
 ```
 
-Fecting existing data from a particular user node
+Fetching existing data from a particular user node
 
 ```javascript
 // to simply fecth and display the data once, call the once function
@@ -88,3 +88,26 @@ Removing a particular node
 user_01.remove();
 ```
 
+### To actually save data to our database
+Saving data to Firebase database
+```javascript
+var user_02_data = {
+    id: '02',
+    age: 21,
+    address: "1 University Avenue",
+    hobbies: {
+        music: "Eminem",
+        sport: "Football"
+    },
+    name: "Leo"
+}
+
+// since we want to store user_02's info under the 'users' node,
+// we call child() from userRef to refer to usersRef's child nodes.
+// Then use the id of user_02 as the the name of child node of 'users', 
+// which can be thought of as the name of the 'key' in a JSON object.
+// If the name of the child node already exists, then set() method 
+// will overwrite the data at that node. 
+// Otherwise, set() mothod will create a new node and set the correspoding data.
+usersRef.child(user_02_data.id).set(user_02_data);
+```
