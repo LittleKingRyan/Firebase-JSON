@@ -80,3 +80,11 @@ function update(node, key, value) {
 // 'users/01/address'
 // then we can update uesr_01's address by simply calling the update function
 update('users/01', 'address', 'New address');
+```
+
+Removing a particular node
+```javascript
+// simply calling the remove() mothod a node reference will do the job
+user_01.remove();
+```
+
