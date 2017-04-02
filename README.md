@@ -2,12 +2,16 @@
 
 ### Suppose we already have data in our database
 
-Create data reference
+Creating data reference
 ```javascript
+// To work with data in firebase database, we need to first create database reference
+// this can be on the root node or a particular node
+// for the root node, simply type
+const dataRef = firebase.database().ref();
 // selecting the 'users' child node in the database
 const usersRef = firebase.database().ref().child('users');
 // if we want to further select a particular user nested under the 'users' node, 
-// we can do so by selecting from the userRef
+// we can do so by selecting from the usersRef
 const user_01 = userRef.child('01');
 ```
 
