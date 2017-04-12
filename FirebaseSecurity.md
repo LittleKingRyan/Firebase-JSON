@@ -28,8 +28,8 @@ We want our admins to have acess to write data, and we want to implement authori
 for their access to the data in our database.
 
 The rules for our app is that all the logged in users have access to the meta-data of a game, like date, opponent, 
-and whether the game is public, which means that the content of the game can be visited without holding a ticket. If the 
-game is not public, we only the ticket holders visit the game (read the game content). Also, the ticket holders 
+and whether the game is public, and this isPublic says whether that the content of the game can be visited without a ticket or not. 
+If the game is not public, we only the ticket holders visit the game (read the game content). Also, the ticket holders 
 have write access to his or her own ticket only.
 
 This is the data in our database: 
